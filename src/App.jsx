@@ -1,29 +1,60 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+
 import Home from "./pages/Home";
-import Topup from "./pages/Topup";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Services from "./pages/Services";
 import Profile from "./pages/Profile";
 import Transaction from "./pages/Transaction";
-import NotFound from "./pages/NotFound";
+import Topup from "./pages/Topup";
+import Service from "./pages/Service";
 
-const App = () => {
+import Navbar from "./components/Navbar";
+import Container from "./components/Container";
+
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { AuthAction } from "./utils/reducer/auth";
+
+export default function AppRouter() {
+  const { auth } = useSelector((states) => states);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!auth.user) {
+      dispatch(AuthAction.CheckLogin());
+    }
+  }, [auth, dispatch]);
+
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/topup" element={<Topup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/transaction" element={<Transaction />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </div>
+    <>
+      {auth.isLogin ? (
+        <>
+          <Navbar />
+          <Container>
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/transaction" element={<Transaction />} />
+              <Route path="/topup" element={<Topup />} />
+              <Route path="/service/:id" element={<Service />} />
+              <Route
+                path="/login"
+                element={<Navigate to="/" replace={true} />}
+              />
+              <Route
+                path="/register"
+                element={<Navigate to="/" replace={true} />}
+              />
+            </Routes>
+          </Container>
+        </>
+      ) : (
+        <Routes>
+          <Route exact path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="*" element={<Navigate to="/login" replace={true} />} />
+        </Routes>
+      )}
+    </>
   );
-};
-
-export default App;
+}

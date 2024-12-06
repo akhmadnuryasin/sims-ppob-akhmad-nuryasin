@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { AuthAction } from "../utils/reducer/auth";
-import { ProfileAction } from "../utils/reducer/profile";
-import Uploader from "../utils/uploader";
+import { AuthAction } from "../redux/reducer/auth";
+import { ProfileAction } from "../redux/reducer/profile";
+import { Uploader } from "../utils/helpers";
 
 import Input from "../components/Input";
 import Image from "../components/Image";

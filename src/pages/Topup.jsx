@@ -1,17 +1,15 @@
-/** @format */
-
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { ProfileAction } from "../utils/reducer/profile";
+import { ProfileAction } from "../redux/reducer/profile";
 import Swal from "sweetalert2";
 import { assets } from "../assets/assets";
 
-import Toast from "../components/Toats";
+import Toast from "../components/Toast";
 import Input from "../components/Input";
 import MiniProfile from "../components/MiniProfile";
 import UserBalance from "../components/UserBalance";
 
-import { formatNumber } from "../utils/moneyFormatter";
+import { formatNumber } from "../utils/helpers";
 import { FaMoneyCheck } from "react-icons/fa6";
 
 export default function Topup() {
@@ -51,7 +49,7 @@ export default function Topup() {
       customClass: {
         confirmButton: "popup-ok",
         cancelButton: "popup-cancel",
-        actions: "popup-actions",
+        actions: "popup-actions-vertical", // Custom class untuk posisi vertikal
       },
       buttonsStyling: false,
     });
@@ -60,8 +58,10 @@ export default function Topup() {
       .fire({
         html: `
           <div>
-          <h1 class="text-base mb-2">Anda yakin untuk Top Up sebesar</h1>
-          <h1 class="text-2xl font-bold">Rp${formatNumber(nominal)} ?</h1>
+            <h1 class="text-base mb-2">Anda yakin untuk Top Up sebesar</h1>
+            <h1 class="text-2xl font-bold">Rp${formatNumber(
+              numericValue
+            )} ?</h1>
           </div>`,
         iconHtml: `<img src=${assets.logo} width="100" height="auto"/>`,
         showCancelButton: true,

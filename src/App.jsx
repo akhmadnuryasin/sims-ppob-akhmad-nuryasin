@@ -13,7 +13,7 @@ import Container from "./components/Container";
 
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { AuthAction } from "./utils/reducer/auth";
+import { AuthAction } from "./redux/reducer/auth";
 
 export default function AppRouter() {
   const { auth } = useSelector((states) => states);

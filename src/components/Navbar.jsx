@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { ProfileAction } from "../utils/reducer/profile";
-import { ServiceAction } from "../utils/reducer/service";
-import { BannerAction } from "../utils/reducer/banner";
+import { ProfileAction } from "../redux/reducer/profile";
+import { ServiceAction } from "../redux/reducer/service";
+import { BannerAction } from "../redux/reducer/banner";
 
 import Container from "./Container";
 

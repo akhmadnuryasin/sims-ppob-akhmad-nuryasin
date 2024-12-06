@@ -1,4 +1,4 @@
-import api from "../api";
+import api from "../../service/api";
 
 const type = {
   GET_SERVICE: "GET_SERVICE",

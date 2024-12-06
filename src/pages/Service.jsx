@@ -1,16 +1,16 @@
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
-import { ProfileAction } from "../utils/reducer/profile";
+import { ProfileAction } from "../redux/reducer/profile";
 import Swal from "sweetalert2";
 
-import Toast from "../components/Toats";
+import Toast from "../components/Toast";
 import MiniProfile from "../components/MiniProfile";
 import UserBalance from "../components/UserBalance";
 import Input from "../components/Input";
 
 import { FaMoneyCheck } from "react-icons/fa6";
-import { formatNumber } from "../utils/moneyFormatter";
+import { formatNumber } from "../utils/helpers";
 import { assets } from "../assets/assets";
 
 export default function Service() {

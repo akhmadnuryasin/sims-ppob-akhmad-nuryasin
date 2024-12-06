@@ -1,15 +1,15 @@
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { AuthAction } from "../utils/reducer/auth";
+import { AuthAction } from "../redux/reducer/auth";
 import { Link } from "react-router-dom";
 
 import Input from "../components/Input";
-import Toast from "../components/Toats";
+import Toast from "../components/Toast";
 
 import Logo from "../assets/Logo.png";
 import { MdAlternateEmail, MdLockOutline, MdPerson } from "react-icons/md";
 import { RiEyeLine, RiEyeOffLine } from "react-icons/ri";
-import isEmailValid from "../utils/validateEmail";
+import { isEmailValid } from "../utils/helpers";
 
 export default function Register() {
   const dispatch = useDispatch();

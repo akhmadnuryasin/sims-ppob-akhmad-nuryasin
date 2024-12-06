@@ -1,6 +1,4 @@
-import { formatNumber } from "../utils/moneyFormatter";
-import { formatTimestamp } from "../utils/dateFormatter";
-
+import { formatNumber, formatTimestamp } from "../utils/helpers";
 export default function TransactionCard({ data }) {
   return (
     <div className="flex justify-between px-5 py-3 border border-gray-500 rounded-md">

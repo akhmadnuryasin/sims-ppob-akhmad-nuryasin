@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
-import api from "../api";
-import { formatNumber } from "../moneyFormatter";
+import api from "../../service/api";
+import formatNumber from "../../utils/helpers";
 
 const type = {
   GET_PROFILE: "GET_PROFILE",

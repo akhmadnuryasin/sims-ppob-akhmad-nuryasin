@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { HistoryAction } from "../utils/reducer/transaction";
+import { HistoryAction } from "../redux/reducer/transaction";
 
 import MiniProfile from "../components/MiniProfile";
 import UserBalance from "../components/UserBalance";

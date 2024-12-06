@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
-import { formatNumber } from "../utils/moneyFormatter";
+import { formatNumber } from "../utils/helpers";
 import { RiEyeLine, RiEyeOffLine } from "react-icons/ri";
 
 export default function UserBalance() {

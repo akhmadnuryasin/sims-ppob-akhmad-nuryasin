@@ -10,6 +10,7 @@ import Logo from "../assets/Logo.png";
 import { MdAlternateEmail, MdLockOutline, MdPerson } from "react-icons/md";
 import { RiEyeLine, RiEyeOffLine } from "react-icons/ri";
 import { isEmailValid } from "../utils/helpers";
+import { assets } from "../assets/assets";
 
 export default function Register() {
   const dispatch = useDispatch();
@@ -139,7 +140,13 @@ export default function Register() {
           </strong>
         </span>
       </div>
-      <div className="banner-login"></div>
+      <div className="banner-login">
+        <img
+          src={assets.illustration_login}
+          alt="banner"
+          className="w-full h-screen"
+        />
+      </div>
     </main>
   );
 }

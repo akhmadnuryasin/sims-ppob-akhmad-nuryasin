@@ -11,6 +11,7 @@ import { MdAlternateEmail, MdLockOutline } from "react-icons/md";
 
 import { RiEyeLine, RiEyeOffLine } from "react-icons/ri";
 import { isEmailValid } from "../utils/helpers";
+import { assets } from "../assets/assets";
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -81,7 +82,13 @@ export default function Login() {
           </strong>
         </span>
       </div>
-      <div className="banner-login"></div>
+      <div className="banner-login">
+        <img
+          src={assets.illustration_login}
+          alt="banner"
+          className="w-full h-screen"
+        />
+      </div>
     </main>
   );
 }
